@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -73,7 +73,7 @@
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9yf-Un-adf" userLabel="SigninButton">
-                    <rect key="frame" x="337" y="548" width="350" height="40"/>
+                    <rect key="frame" x="337" y="538" width="350" height="40"/>
                     <color key="backgroundColor" red="0.38823529411764707" green="0.62745098039215685" blue="0.83137254901960778" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="Q9Y-I2-Rny"/>
@@ -95,29 +95,11 @@
                         <action selector="loginAction:" destination="-1" eventType="touchUpInside" id="szl-0t-ZZx"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rKW-bE-rB8">
-                    <rect key="frame" x="337" y="503" width="120" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="30" id="4HE-Hp-aHn"/>
-                        <constraint firstAttribute="width" constant="120" id="JfV-vg-HEg"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    <state key="normal" title="进入收银界面" image="icon_unSelectedBox">
-                        <color key="titleColor" red="0.38823529410000002" green="0.62745098040000002" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </state>
-                    <state key="selected" title="进入收银界面" image="icon_selectedBox"/>
-                    <connections>
-                        <action selector="exchangeTypeAction:" destination="-1" eventType="touchUpInside" id="wSL-BI-Nxj"/>
-                    </connections>
-                </button>
             </subviews>
             <constraints>
-                <constraint firstItem="rKW-bE-rB8" firstAttribute="top" secondItem="j9y-Mo-81p" secondAttribute="bottom" constant="15" id="1qd-QI-qfb"/>
                 <constraint firstItem="j9y-Mo-81p" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="2VH-5M-0Ut"/>
+                <constraint firstItem="9yf-Un-adf" firstAttribute="top" secondItem="j9y-Mo-81p" secondAttribute="bottom" constant="50" id="7qN-lb-bej"/>
                 <constraint firstItem="VH3-45-54d" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="200" id="JiP-3p-01y"/>
-                <constraint firstItem="rKW-bE-rB8" firstAttribute="leading" secondItem="j9y-Mo-81p" secondAttribute="leading" id="Vo5-qA-Lcs"/>
-                <constraint firstItem="9yf-Un-adf" firstAttribute="top" secondItem="rKW-bE-rB8" secondAttribute="bottom" constant="15" id="fwt-vd-G2W"/>
                 <constraint firstItem="VH3-45-54d" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="gMB-F3-tW2"/>
                 <constraint firstItem="j9y-Mo-81p" firstAttribute="top" secondItem="VH3-45-54d" secondAttribute="bottom" constant="100" id="oTx-ue-mvM"/>
                 <constraint firstItem="9yf-Un-adf" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="pP2-CG-3Q0"/>
@@ -127,7 +109,5 @@
     </objects>
     <resources>
         <image name="icon_login_logo" width="236" height="79"/>
-        <image name="icon_selectedBox" width="17" height="17"/>
-        <image name="icon_unSelectedBox" width="17" height="17"/>
     </resources>
 </document>

@@ -73,12 +73,6 @@
     }];
 }
 
-
-- (IBAction)exchangeTypeAction:(UIButton *)sender {
-    [sender setSelected:!sender.selected];
-    [[IPCAppManager sharedManager] setIsPayOrderStatus:sender.selected];
-}
-
 #pragma mark //UITextFieldDelegate
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {

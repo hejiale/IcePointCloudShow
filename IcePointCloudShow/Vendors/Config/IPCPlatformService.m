@@ -24,12 +24,12 @@
 - (void)setUp
 {
     [self checkNetwork];
-    [self checkVersion];
-    [self enableFace];
-    [self enableSkin];
-    [self enableKeyboard];
+//    [self checkVersion];
+//    [self enableFace];
+//    [self enableSkin];
+//    [self enableKeyboard];
     [self bindWechat];
-    [self setUpBugtags];
+//    [self setUpBugtags];
 }
 
 /**
