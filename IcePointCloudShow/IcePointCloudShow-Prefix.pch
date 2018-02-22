@@ -1,0 +1,43 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+
+#ifdef __OBJC__
+
+//Frameworks
+#import <Availability.h>
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <AudioToolbox/AudioToolbox.h>
+#import <Photos/Photos.h>
+#import <AVFoundation/AVFoundation.h>
+#import <AdSupport/AdSupport.h>
+#import <WebKit/WebKit.h>
+//Third Framework
+#import "AFNetworking.h"
+#import "WXApi.h"
+#import "JSONKit.h"
+#import "MJRefresh.h"
+#import "Masonry.h"
+#import "IQKeyboardManager.h"
+#import "IQTextView.h"
+#import "MJExtension.h"
+#import "UIImageView+CornerRadius.h"
+#import <TuSDKGeeV1/TuSDKGeeV1.h>
+#import "iflyMSC/IFlyFaceSDK.h"
+#import "YYKit.h"
+#import "JKCategories.h"
+#import "ReactiveObjC.h"
+//Head File
+#import "HeaderFile.h"
+
+
+#endif
+
+
+
+
+

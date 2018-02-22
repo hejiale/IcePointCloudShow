@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="IPCOptometryViewController">
+            <connections>
+                <outlet property="contentView" destination="63M-cB-QUg" id="Po8-Ck-xDA"/>
+                <outlet property="menuTableView" destination="TzY-1o-DiZ" id="Iky-iy-0Rf"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="704"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TzY-1o-DiZ">
+                    <rect key="frame" x="0.0" y="5" width="170" height="694"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="170" id="BpF-sy-iNN"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="qkv-DB-5lx"/>
+                        <outlet property="delegate" destination="-1" id="yZa-Lw-dMz"/>
+                    </connections>
+                </tableView>
+                <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="63M-cB-QUg">
+                    <rect key="frame" x="175" y="0.0" width="849" height="704"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="63M-cB-QUg" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="31o-rZ-COG"/>
+                <constraint firstAttribute="trailing" secondItem="63M-cB-QUg" secondAttribute="trailing" id="6nC-C5-ISj"/>
+                <constraint firstAttribute="bottom" secondItem="63M-cB-QUg" secondAttribute="bottom" id="8P3-Jy-jye"/>
+                <constraint firstItem="63M-cB-QUg" firstAttribute="leading" secondItem="TzY-1o-DiZ" secondAttribute="trailing" constant="5" id="EtK-ru-xpf"/>
+                <constraint firstItem="TzY-1o-DiZ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="5" id="Hzj-QU-M7L"/>
+                <constraint firstItem="TzY-1o-DiZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="caI-xE-cya"/>
+                <constraint firstAttribute="bottom" secondItem="TzY-1o-DiZ" secondAttribute="bottom" constant="5" id="uK4-y0-Wen"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+</document>

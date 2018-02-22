@@ -1,0 +1,6 @@
+framework module Pods_IcePointCloudShow {
+  umbrella header "Pods-IcePointCloudShow-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="IPCSaleserShopperViewController">
+            <connections>
+                <outlet property="contentView" destination="XiS-6s-g4f" id="YUU-Tz-gUf"/>
+                <outlet property="menuTableView" destination="TIx-h9-MC4" id="OOa-zJ-fJn"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TIx-h9-MC4">
+                    <rect key="frame" x="0.0" y="5" width="170" height="763"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="170" id="Elt-wU-n6H"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="NGy-BT-rD4"/>
+                        <outlet property="delegate" destination="-1" id="OLN-4p-SWM"/>
+                    </connections>
+                </tableView>
+                <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XiS-6s-g4f">
+                    <rect key="frame" x="175" y="0.0" width="849" height="713"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MGc-mG-nvj">
+                    <rect key="frame" x="175" y="718" width="849" height="50"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oqe-OB-AkT">
+                            <rect key="frame" x="699" y="0.0" width="150" height="50"/>
+                            <color key="backgroundColor" red="0.38823529410000002" green="0.62745098040000002" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="150" id="vtR-fW-8tP"/>
+                            </constraints>
+                            <state key="normal" title="生成流程号">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="oqe-OB-AkT" firstAttribute="top" secondItem="MGc-mG-nvj" secondAttribute="top" id="9Z1-FF-nMV"/>
+                        <constraint firstAttribute="trailing" secondItem="oqe-OB-AkT" secondAttribute="trailing" id="AA1-u4-mfV"/>
+                        <constraint firstAttribute="height" constant="50" id="Qg0-kE-7vk"/>
+                        <constraint firstAttribute="bottom" secondItem="oqe-OB-AkT" secondAttribute="bottom" id="mXi-yW-IV1"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="MGc-mG-nvj" firstAttribute="top" secondItem="XiS-6s-g4f" secondAttribute="bottom" constant="5" id="56s-cg-TV0"/>
+                <constraint firstAttribute="bottom" secondItem="TIx-h9-MC4" secondAttribute="bottom" id="7c2-IR-gIU"/>
+                <constraint firstItem="TIx-h9-MC4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="EWB-1d-zke"/>
+                <constraint firstAttribute="trailing" secondItem="MGc-mG-nvj" secondAttribute="trailing" id="RVe-oR-ORI"/>
+                <constraint firstAttribute="trailing" secondItem="XiS-6s-g4f" secondAttribute="trailing" id="Xli-i8-0lf"/>
+                <constraint firstAttribute="bottom" secondItem="MGc-mG-nvj" secondAttribute="bottom" id="bKy-dB-hWf"/>
+                <constraint firstItem="TIx-h9-MC4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="5" id="hve-va-jFI"/>
+                <constraint firstItem="XiS-6s-g4f" firstAttribute="leading" secondItem="TIx-h9-MC4" secondAttribute="trailing" constant="5" id="kGr-MP-20W"/>
+                <constraint firstItem="MGc-mG-nvj" firstAttribute="leading" secondItem="TIx-h9-MC4" secondAttribute="trailing" constant="5" id="qN8-aC-0ya"/>
+                <constraint firstItem="XiS-6s-g4f" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ruP-yv-dcE"/>
+            </constraints>
+        </view>
+    </objects>
+</document>
