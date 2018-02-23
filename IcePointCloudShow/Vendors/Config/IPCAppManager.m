@@ -13,6 +13,7 @@ NSString *const IPCFirstLanuchKey                               = @"IPFirstLanuc
 NSString* const IPCUserNameKey                                 = @"UserNameKey";
 NSString *const IPCListLoginHistoryKey                        = @"IPCListLoginHistoryKey";
 NSString *const IPCSearchHistoryListKey                      = @"IPCSearchGlassesHistoryListKey";
+NSString *const IPCSearchHistoryCodeKey                   = @"IPCSearchHistoryCodeKey";
 NSString * const kIPCErrorNetworkAlertMessage           = @"请检查您的设备->设置->无线局域网选项，并重新登录!";
 NSString * const kIPCNotConnectInternetMessage         = @"连接服务出错了，请检查当前网络环境，并重新登录!";
 
@@ -103,6 +104,20 @@ NSString * const kIPCNotConnectInternetMessage         = @"连接服务出错了
     __block NSArray * keywordHistory = [[NSMutableArray alloc]init];
     
     NSData *historyData = [NSUserDefaults jk_dataForKey:IPCSearchHistoryListKey];
+    
+    if ([historyData isKindOfClass:[NSData class]]) {
+        keywordHistory = [NSKeyedUnarchiver unarchiveObjectWithData:historyData];
+    } else {
+        keywordHistory = [[NSArray alloc]init];
+    }
+    return keywordHistory;
+}
+
+- (NSArray *)localProductsHistoryWithCode
+{
+    __block NSArray * keywordHistory = [[NSMutableArray alloc]init];
+    
+    NSData *historyData = [NSUserDefaults jk_dataForKey:IPCSearchHistoryCodeKey];
     
     if ([historyData isKindOfClass:[NSData class]]) {
         keywordHistory = [NSKeyedUnarchiver unarchiveObjectWithData:historyData];
