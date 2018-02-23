@@ -1,6 +1,0 @@
-framework module MMScan {
-  umbrella header "MMScan-umbrella.h"
-
-  export *
-  module * { export * }
-}

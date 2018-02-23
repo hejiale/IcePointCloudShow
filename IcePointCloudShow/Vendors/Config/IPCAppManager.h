@@ -10,7 +10,6 @@
 #import "IPCStoreResult.h"
 #import "IPCWareHouseResult.h"
 #import "IPCPriceStrategyResult.h"
-#import "IPCCustomTextField.h"
 #import "IPCCompanyConfig.h"
 
 //The App for the first time login
@@ -21,22 +20,13 @@ extern NSString* const IPCUserNameKey;
 extern NSString *const IPCListLoginHistoryKey;
 //Keep records of commodity search key
 extern NSString *const IPCSearchHistoryListKey;
-//Save search Key users
-extern NSString *const IPCSearchCustomerkey;
-//Inform the screening homepage search goods
-//Shopping cart change notification
-extern NSString *const IPCShoppingCartCountKey;
 //Error Networking Status Message
 extern NSString * const kIPCErrorNetworkAlertMessage;
 extern NSString * const kIPCNotConnectInternetMessage;
-//Choose Customer
-extern NSString * const IPCChooseCustomerNotification;
-extern NSString * const IPCChooseOptometryNotification;
-extern NSString * const IPCGetProtyOrderNotification;
 
 @interface IPCAppManager : NSObject
 
-@property (nonatomic, assign, readwrite)     BOOL                          isPayOrderStatus;
+@property (nonatomic, copy, readwrite)       NSString                   * employeeName;
 @property (nonatomic, copy, readwrite)       NSString                   * deviceToken;
 @property (nonatomic, strong, readwrite)    IPCStoreResult          * storeResult;
 @property (nonatomic, strong, readwrite)    IPCWareHouseResult * wareHouse;
@@ -104,11 +94,6 @@ extern NSString * const IPCGetProtyOrderNotification;
  */
 - (void)queryPriceStrategy:(void (^)(NSError *error))complete;
 
-
-/**
-   Load Company Config
- */
-- (void)getCompanyConfig:(void (^)(NSError *error))complete;
 
 
 @end

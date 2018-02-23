@@ -20,7 +20,6 @@ static NSString * const menuIdentifier  = @"PersonMenuCellIdentifier";
 @property (weak, nonatomic) IBOutlet UITableView *personTableView;
 @property (weak, nonatomic) IBOutlet UIButton *logouOutButton;
 @property (copy, nonatomic) void(^LogoutBlock)();
-@property (copy, nonatomic) void(^UpdateBlock)();
 @property (copy, nonatomic) void(^WareHouseBlock)();
 @property (copy, nonatomic) void(^PriceStrategyBlock)();
 
@@ -30,7 +29,6 @@ static NSString * const menuIdentifier  = @"PersonMenuCellIdentifier";
 
 - (instancetype)initWithFrame:(CGRect)frame
                        Logout:(void(^)())logout
-                  UpdateBlock:(void(^)())update
                WareHouseBlock:(void(^)())wareHouse
            PriceStrategyBlock:(void(^)())priceStrategy
 {
@@ -40,7 +38,6 @@ static NSString * const menuIdentifier  = @"PersonMenuCellIdentifier";
         [self addSubview:view];
         
         self.LogoutBlock  = logout;
-        self.UpdateBlock  = update;
         self.WareHouseBlock = wareHouse;
         self.PriceStrategyBlock = priceStrategy;
     }

@@ -12,7 +12,6 @@
 
 - (instancetype)initWithFrame:(CGRect)frame
                        Logout:(void(^)())logout
-                  UpdateBlock:(void(^)())update
                WareHouseBlock:(void(^)())wareHouse
            PriceStrategyBlock:(void(^)())priceStrategy;
 

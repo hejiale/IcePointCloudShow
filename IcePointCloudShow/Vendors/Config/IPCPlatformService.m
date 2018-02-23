@@ -7,7 +7,6 @@
 //
 
 #import "IPCPlatformService.h"
-#import "IPCCheckVersion.h"
 
 @implementation IPCPlatformService
 
@@ -24,20 +23,12 @@
 - (void)setUp
 {
     [self checkNetwork];
-//    [self checkVersion];
-//    [self enableFace];
-//    [self enableSkin];
-//    [self enableKeyboard];
+    [self enableFace];
+    [self enableSkin];
+    [self enableKeyboard];
     [self bindWechat];
-//    [self setUpBugtags];
 }
 
-/**
- *  Check Version
- */
-- (void)checkVersion{
-    [[IPCCheckVersion shardManger] checkVersion];
-}
 
 /**
  *  Add the keyboard to track
@@ -59,14 +50,6 @@
  */
 - (void)enableSkin{
     [TuSDK initSdkWithAppKey:IPCTuSdkKey];
-}
-
-- (void)setUpBugtags
-{
-    [Bugtags startWithAppKey:IPCBugtagsKey invocationEvent:BTGInvocationEventNone];
-    [Bugtags setTrackingNetwork:YES];
-    [Bugtags sync:YES];
-    
 }
 
 /**

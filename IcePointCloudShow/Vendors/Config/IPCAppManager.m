@@ -13,12 +13,6 @@ NSString *const IPCFirstLanuchKey                               = @"IPFirstLanuc
 NSString* const IPCUserNameKey                                 = @"UserNameKey";
 NSString *const IPCListLoginHistoryKey                        = @"IPCListLoginHistoryKey";
 NSString *const IPCSearchHistoryListKey                      = @"IPCSearchGlassesHistoryListKey";
-NSString *const IPCShoppingCartCountKey                   = @"IPCShoppingCartCountKey";
-NSString *const IPCSearchCustomerkey                        = @"IPSearchCustomerHistoryListkey";
-NSString * const IPCChooseCustomerNotification         = @"IPCChooseCustomerNotification";
-NSString * const IPCChooseOptometryNotification         = @"IPCChooseOptometryNotification";
-NSString * const IPCGetProtyOrderNotification              = @"IPCGetProtyOrderNotification";
-NSString * const kIPCDeviceLoginUUID                          = @"IPCDeviceLoginUUID";
 NSString * const kIPCErrorNetworkAlertMessage           = @"请检查您的设备->设置->无线局域网选项，并重新登录!";
 NSString * const kIPCNotConnectInternetMessage         = @"连接服务出错了，请检查当前网络环境，并重新登录!";
 
@@ -97,26 +91,10 @@ NSString * const kIPCNotConnectInternetMessage         = @"连接服务出错了
     ///Clear All Data & Clear HTTP Request
     [[IPCAppManager sharedManager] clearData];
     [[IPCTryMatch instance] clearData];
-    [[IPCPayOrderManager sharedManager] resetData];
     [[IPCHttpRequest sharedClient] cancelAllRequest];
     
     IPCLoginViewController * loginVc = [[IPCLoginViewController alloc]initWithNibName:@"IPCLoginViewController" bundle:nil];
     [[[UIApplication sharedApplication] delegate].window setRootViewController:loginVc];
-}
-
-///Load Search Customer Keywords In LocalDatabase
-- (NSArray *)localCustomerHistory
-{
-    __block NSArray * keywordHistory = [[NSMutableArray alloc]init];
-    
-    NSData *historyData = [NSUserDefaults jk_dataForKey:IPCSearchCustomerkey];
-    
-    if ([historyData isKindOfClass:[NSData class]]) {
-        keywordHistory = [NSKeyedUnarchiver unarchiveObjectWithData:historyData];
-    } else {
-        keywordHistory = [[NSArray alloc]init];
-    }
-    return keywordHistory;
 }
 
 ///Load Search Product Keywords In LocalDatabase
@@ -178,8 +156,8 @@ NSString * const kIPCNotConnectInternetMessage         = @"连接服务出错了
     [IPCUserRequestManager queryEmployeeAccountWithSuccessBlock:^(id responseValue){
         //Query Responsity WareHouse
         [IPCAppManager sharedManager].storeResult = [IPCStoreResult mj_objectWithKeyValues:responseValue];
-        [IPCAppManager sharedManager].storeResult.employee = [IPCEmployee mj_objectWithKeyValues:responseValue];
-        [[IPCPayOrderManager sharedManager] resetEmployee];
+        [IPCAppManager sharedManager].employeeName = responseValue[@"name"];
+        
         
         if (complete) {
             complete(nil);
@@ -226,22 +204,6 @@ NSString * const kIPCNotConnectInternetMessage         = @"连接服务出错了
     }];
 }
 
-- (void)getCompanyConfig:(void (^)(NSError *))complete
-{
-    [IPCPayOrderRequestManager getCompanyConfigWithSuccessBlock:^(id responseValue)
-     {
-         self.companyCofig = [IPCCompanyConfig mj_objectWithKeyValues:responseValue];
-         
-         if (complete) {
-             complete(nil);
-         }
-     } FailureBlock:^(NSError *error) {
-         if (complete) {
-             complete(error);
-         }
-     }];
-}
-
 - (void)loadCurrentWareHouse
 {
     if (self.storeResult.wareHouseId) {
@@ -261,7 +223,6 @@ NSString * const kIPCNotConnectInternetMessage         = @"连接服务出错了
     self.wareHouse = nil;
     self.currentWareHouse = nil;
     self.deviceToken = nil;
-    self.isPayOrderStatus = NO;
 }
 
 

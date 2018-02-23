@@ -53,9 +53,6 @@
 - (NSArray<NSString *> *)allCategoryName{
     if (self.isTryOn)
         return @[@"镜架",@"太阳眼镜",@"定制类眼镜",@"老花眼镜"];
-    if ([IPCAppManager sharedManager].isPayOrderStatus) {
-        return @[@"全部", @"镜架",@"太阳眼镜",@"定制类眼镜",@"老花眼镜",@"镜片",@"隐形眼镜",@"配件",@"护理液",@"其它"];
-    }
     return @[@"镜架",@"太阳眼镜",@"定制类眼镜",@"老花眼镜",@"镜片",@"隐形眼镜",@"配件",@"其它"];
 }
 

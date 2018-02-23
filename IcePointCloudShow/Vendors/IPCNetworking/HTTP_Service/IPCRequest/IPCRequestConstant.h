@@ -11,12 +11,11 @@
 
 #ifdef DEBUG
 //#define   IPC_ProductAPI_URL       @"http://192.168.1.146:8080/pos"
-#define   IPC_ProductAPI_URL       @"https://dev.IcePointCloudShow.com"
-//#define   IPC_ProductAPI_URL       @"https://IcePointCloudShow.com"
+#define   IPC_ProductAPI_URL       @"https://dev.icepointcloud.com"
 #elif   BETA
-#define   IPC_ProductAPI_URL       @"https://IcePointCloudShow.com"
+#define   IPC_ProductAPI_URL       @"https://icepointcloud.com"
 #else
-#define   IPC_ProductAPI_URL       @"https://IcePointCloudShow.com"
+#define   IPC_ProductAPI_URL       @"https://icepointcloud.com"
 #endif
 #define   IPC_ProductAPI_Port       @"/gateway/api/jsonrpc.jsp"
 

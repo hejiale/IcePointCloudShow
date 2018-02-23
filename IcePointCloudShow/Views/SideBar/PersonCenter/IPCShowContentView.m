@@ -8,7 +8,6 @@
 
 #import "IPCShowContentView.h"
 #import "IPCPersonBaseView.h"
-#import "IPCUpdatePasswordView.h"
 #import "IPCWarehouseView.h"
 #import "IPCPriceStrategyView.h"
 
@@ -55,8 +54,6 @@
     IPCPersonBaseView * personBaseView = [[IPCPersonBaseView alloc]initWithFrame:CGRectMake(self.jk_width, 0, self.jk_width, self.jk_height)
                                                                           Logout:^{
                                                                               [[IPCAppManager sharedManager] logout];
-                                                                          } UpdateBlock:^{
-                                                                              [self setSelectedIndex:3];
                                                                           } WareHouseBlock:^{
                                                                               [self setSelectedIndex:1];
                                                                           } PriceStrategyBlock:^{
@@ -64,9 +61,8 @@
                                                                           }];
     IPCWarehouseView * houseView = [[IPCWarehouseView alloc]initWithFrame:CGRectMake(self.jk_width, 0, self.jk_width, self.jk_height)];
     IPCPriceStrategyView * priceView = [[IPCPriceStrategyView alloc]initWithFrame:CGRectMake(self.jk_width, 0, self.jk_width, self.jk_height)];
-    IPCUpdatePasswordView * updateView = [[IPCUpdatePasswordView alloc]initWithFrame:CGRectMake(self.jk_width, 0, self.jk_width, self.jk_height)];
-    
-    [self setViewArray:@[personBaseView,houseView,priceView,updateView]];
+ 
+    [self setViewArray:@[personBaseView,houseView,priceView]];
 }
 
 - (void)dismissContent:(void (^)())completeBlock

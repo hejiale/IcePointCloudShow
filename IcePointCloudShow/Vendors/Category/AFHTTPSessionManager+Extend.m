@@ -47,8 +47,6 @@
                  success(responseValue, task);
              }
          } Failed:^(NSError * _Nonnull error) {
-             [Bugtags sendException:[NSException exceptionWithName:@"网络数据请求出错" reason:error.localizedDescription userInfo:nil]];
-             
              if (failure){
                  failure(error, task);
              }
@@ -68,8 +66,6 @@
         if ([error code] == NSURLErrorNotConnectedToInternet || [error code] == NSURLErrorTimedOut ) {
             [IPCCommonUI showError:kIPCNotConnectInternetMessage];
         }else{
-            [Bugtags sendException:[NSException exceptionWithName:@"网络请求出错" reason:error.localizedDescription userInfo:nil]];
-            
             if (failure){
                 failure(error, task);
             }

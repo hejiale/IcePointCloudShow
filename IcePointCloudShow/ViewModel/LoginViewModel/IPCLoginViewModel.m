@@ -8,7 +8,6 @@
 
 #import "IPCLoginViewModel.h"
 #import "IPCRootViewController.h"
-#import "IPCSaleserMainViewController.h"
 
 static NSString * const AccountErrorMessage = @"登录帐号不能为空!";
 static NSString * const PasswordErrorMessage = @"登录密码不能为空!";
@@ -106,21 +105,8 @@ static NSString * const PasswordErrorMessage = @"登录密码不能为空!";
         dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
     });
     
-    dispatch_group_async(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
-        [weakSelf loadCompanyConfig:^{
-            dispatch_semaphore_signal(semaphore);
-        }];
-        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
-    });
-    
     dispatch_group_notify(group, dispatch_get_main_queue(), ^{
-        if ([IPCAppManager sharedManager].isPayOrderStatus) {
-            [weakSelf showPayOrderViewController];
-        }else{
-            [weakSelf showMainRootViewController];
-        }
-        
+        [weakSelf showMainRootViewController];
     });
 }
 
@@ -163,18 +149,6 @@ static NSString * const PasswordErrorMessage = @"登录密码不能为空!";
     }];
 }
 
-- (void)loadCompanyConfig:(void(^)())complete
-{
-    [[IPCAppManager sharedManager] getCompanyConfig:^(NSError *error) {
-        if (error) {
-            [IPCCommonUI showError: error.domain];
-        }else{
-            if (complete) {
-                complete();
-            }
-        }
-    }];
-}
 
 #pragma mark //Clicked Methods
 - (void)syncUserAccountHistory:(NSString *)userName
@@ -209,21 +183,5 @@ static NSString * const PasswordErrorMessage = @"登录密码不能为空!";
     });
 }
 
-- (void)showPayOrderViewController
-{
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [UIView transitionWithView:[UIApplication sharedApplication].keyWindow
-                          duration:0.8f
-                           options:UIViewAnimationOptionTransitionCrossDissolve
-                        animations:^{
-                            BOOL oldState = [UIView areAnimationsEnabled];
-                            [UIView setAnimationsEnabled:NO];
-                            IPCSaleserMainViewController * payOrderVC = [[IPCSaleserMainViewController alloc]initWithNibName:@"IPCSaleserMainViewController" bundle:nil];
-                            UINavigationController * payOrderNav = [[UINavigationController alloc]initWithRootViewController:payOrderVC];
-                            [[UIApplication sharedApplication].keyWindow setRootViewController:payOrderNav];
-                            [UIView setAnimationsEnabled:oldState];
-                        } completion:nil];
-    });
-}
 
 @end

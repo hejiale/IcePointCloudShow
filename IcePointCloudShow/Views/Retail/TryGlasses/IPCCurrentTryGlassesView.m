@@ -14,9 +14,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *productImageView;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *productNameLabel;
-@property (weak, nonatomic) IBOutlet UIButton *addCartButton;
-@property (weak, nonatomic) IBOutlet UIButton *reduceButton;
-@property (weak, nonatomic) IBOutlet UILabel *cartNumLabel;
 @property (weak, nonatomic) IBOutlet UIView *parameterContentView;
 @property (weak, nonatomic) IBOutlet UIImageView *defaultGlassImageView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *imageHeight;
@@ -49,8 +46,6 @@
     _glasses = glasses;
     
     if (_glasses) {
-        [self resetBuyStatus];
-        
         IPCGlassesImage * glassImage = [self.glasses imageWithType:IPCGlassesImageTypeThumb];
         if (glassImage.imageURL.length) {
             __block CGFloat scale = 0;
@@ -68,25 +63,6 @@
         
         [self.priceLabel setText:[NSString stringWithFormat:@"￥%.f",_glasses.price]];
         [self.productNameLabel setText:_glasses.glassName];
-        
-        //Shopping cart whether to join the product
-        __block NSInteger glassCount = [[IPCShoppingCart sharedCart]singleGlassesCount:_glasses];
-        
-        if (glassCount > 0) {
-            [self.reduceButton setHidden:NO];
-            [self.cartNumLabel setHidden:NO];
-            [self.cartNumLabel setText:[[NSNumber numberWithInteger:glassCount]stringValue]];
-            
-            //Judge Cart Count
-            __block NSInteger cartCount = [[IPCShoppingCart sharedCart] singleGlassesCount:_glasses];
-            
-            if (([_glasses filterType] == IPCTopFilterTypeContactLenses || [_glasses filterType] == IPCTopFilterTypeReadingGlass || [_glasses filterType] == IPCTopFilterTypeLens) && _glasses.isBatch)
-            {
-                [self.reduceButton setImage:[UIImage imageNamed:@"icon_cart_edit"] forState:UIControlStateNormal];
-            }else{
-                [self.reduceButton setImage:[UIImage imageNamed:@"icon_subtract"] forState:UIControlStateNormal];
-            }
-        }
         
         //Parameter View
         __block NSMutableArray<NSString *> * array = [[NSMutableArray alloc]init];
@@ -157,56 +133,6 @@
      self.glasses = [[IPCTryMatch instance] currentMatchItem].glass;
 }
 
-
-- (IBAction)addCartAction:(id)sender {
-    if (([self.glasses filterType] == IPCTopFilterTypeContactLenses || [self.glasses filterType] == IPCTopFilterTypeReadingGlass || [self.glasses filterType] == IPCTopFilterTypeLens) && self.glasses.isBatch)
-    {
-        if (self.ChooseBlock) {
-            self.ChooseBlock();
-        }
-    }else{
-        [self addCartAnimation];
-    }
-}
-
-- (IBAction)reduceCartAction:(id)sender {
-    if (([self.glasses filterType] == IPCTopFilterTypeContactLenses || [self.glasses filterType] == IPCTopFilterTypeReadingGlass || [self.glasses filterType] == IPCTopFilterTypeLens) && self.glasses.isBatch)
-    {
-        if (self.EditBlock) {
-            self.EditBlock();
-        }
-    }else{
-        [self reduceCartAnimation];
-    }
-}
-
-
-- (void)addCartAnimation{
-    if (self.glasses) {
-        [IPCCommonUI showSuccess:@"添加商品成功!"];
-        [[IPCShoppingCart sharedCart] plusGlass:self.glasses];
-        
-        if (self.ReloadBlock) {
-            self.ReloadBlock();
-        }
-    }
-}
-
-
-- (void)reduceCartAnimation{
-    if (self.glasses) {
-        [[IPCShoppingCart sharedCart] removeGlasses:self.glasses];
-        
-        if (self.ReloadBlock) {
-            self.ReloadBlock();
-        }
-    }
-}
-
-- (void)resetBuyStatus{
-    [self.reduceButton setHidden:YES];
-    [self.cartNumLabel setHidden:YES];
-}
 
 
 @end
