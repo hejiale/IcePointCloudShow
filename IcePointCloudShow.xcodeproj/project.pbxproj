@@ -130,7 +130,6 @@
 		CB0F564C1F988B05003707F2 /* IPCDynamicImageTextButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0F560F1F988B05003707F2 /* IPCDynamicImageTextButton.m */; };
 		CB0F564D1F988B05003707F2 /* IPCStaticImageTextButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0F56111F988B05003707F2 /* IPCStaticImageTextButton.m */; };
 		CB0F564E1F988B05003707F2 /* IPCEmptyAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0F56141F988B05003707F2 /* IPCEmptyAlertView.m */; };
-		CB0F564F1F988B05003707F2 /* IPCSwipeView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0F56171F988B05003707F2 /* IPCSwipeView.m */; };
 		CB0F56501F988B05003707F2 /* IPCProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0F561A1F988B05003707F2 /* IPCProgressView.m */; };
 		CB0F56511F988B05003707F2 /* IPCRefreshAnimationFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0F561D1F988B05003707F2 /* IPCRefreshAnimationFooter.m */; };
 		CB0F56521F988B05003707F2 /* IPCRefreshAnimationHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0F561F1F988B05003707F2 /* IPCRefreshAnimationHeader.m */; };
@@ -386,8 +385,6 @@
 		CB0F56111F988B05003707F2 /* IPCStaticImageTextButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPCStaticImageTextButton.m; sourceTree = "<group>"; };
 		CB0F56131F988B05003707F2 /* IPCEmptyAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPCEmptyAlertView.h; sourceTree = "<group>"; };
 		CB0F56141F988B05003707F2 /* IPCEmptyAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPCEmptyAlertView.m; sourceTree = "<group>"; };
-		CB0F56161F988B05003707F2 /* IPCSwipeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPCSwipeView.h; sourceTree = "<group>"; };
-		CB0F56171F988B05003707F2 /* IPCSwipeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPCSwipeView.m; sourceTree = "<group>"; };
 		CB0F56191F988B05003707F2 /* IPCProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPCProgressView.h; sourceTree = "<group>"; };
 		CB0F561A1F988B05003707F2 /* IPCProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPCProgressView.m; sourceTree = "<group>"; };
 		CB0F561C1F988B05003707F2 /* IPCRefreshAnimationFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPCRefreshAnimationFooter.h; sourceTree = "<group>"; };
@@ -1101,7 +1098,6 @@
 				CB0F560A1F988B05003707F2 /* Common */,
 				CB0F560D1F988B05003707F2 /* DIYButton */,
 				CB0F56121F988B05003707F2 /* EmptyAlert */,
-				CB0F56151F988B05003707F2 /* LeftSwipe */,
 				CB0F56181F988B05003707F2 /* ProgressBar */,
 				CB0F561B1F988B05003707F2 /* Refresh */,
 				CB0F56201F988B05003707F2 /* Switch */,
@@ -1136,15 +1132,6 @@
 				CB0F56141F988B05003707F2 /* IPCEmptyAlertView.m */,
 			);
 			path = EmptyAlert;
-			sourceTree = "<group>";
-		};
-		CB0F56151F988B05003707F2 /* LeftSwipe */ = {
-			isa = PBXGroup;
-			children = (
-				CB0F56161F988B05003707F2 /* IPCSwipeView.h */,
-				CB0F56171F988B05003707F2 /* IPCSwipeView.m */,
-			);
-			path = LeftSwipe;
 			sourceTree = "<group>";
 		};
 		CB0F56181F988B05003707F2 /* ProgressBar */ = {
@@ -1730,7 +1717,6 @@
 				CB0F54411F988191003707F2 /* IPCShareChatView.m in Sources */,
 				CB0F565A1F988B05003707F2 /* IPCDefineCameraBaseComponent.m in Sources */,
 				CB0F564E1F988B05003707F2 /* IPCEmptyAlertView.m in Sources */,
-				CB0F564F1F988B05003707F2 /* IPCSwipeView.m in Sources */,
 				CB0F53801F9876AF003707F2 /* IPCRootViewController.m in Sources */,
 				CB0F54191F988191003707F2 /* IPCChooseCategoryView.m in Sources */,
 				CB0F55A51F98845A003707F2 /* IPCOfflineFaceDetector.m in Sources */,
