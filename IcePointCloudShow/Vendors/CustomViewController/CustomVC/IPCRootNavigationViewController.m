@@ -48,7 +48,7 @@
     if (!isHiden) {
         UIButton * backButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [backButton setFrame:CGRectMake(0, 0, 80, 40)];
-        [backButton setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
+        [backButton setImage:[UIImage imageNamed:@"icon_back"] forState:UIControlStateNormal];
         [backButton setAdjustsImageWhenHighlighted:NO];
         backButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
         [backButton addTarget:self action:@selector(backAction) forControlEvents:UIControlEventTouchUpInside];

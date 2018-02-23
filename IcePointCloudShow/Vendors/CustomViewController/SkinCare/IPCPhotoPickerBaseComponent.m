@@ -93,26 +93,14 @@
 {
     [super viewWillAppear:animated];
     
-    [self.navigationController setNavigationBarHidden:NO];
-    [[UIApplication sharedApplication] setStatusBarHidden:NO];
-    
+//    [self.navigationController setNavigationBarHidden:NO];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     
-    [self.navigationController setNavigationBarHidden:YES];
-    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
+//    [self.navigationController setNavigationBarHidden:YES];
 }
-
-
-//- (void)viewWillDisappear:(BOOL)animated{
-//    [super viewWillDisappear:animated];
-//
-//    [[UIApplication sharedApplication] setStatusBarHidden:NO];
-//
-//}
-
 
 #pragma mark //Declaration Array
 -(NSMutableArray<IPCPhoto *> *)photoArray

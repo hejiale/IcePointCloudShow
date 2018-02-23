@@ -106,23 +106,24 @@
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     
+    [self.navigationController setNavigationBarHidden:NO];
     [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
 }
 
 #pragma mark - camera action
-- (BOOL)prefersStatusBarHidden
-{
-    return YES;
-}
+//- (BOOL)prefersStatusBarHidden
+//{
+//    return YES;
+//}
 
--(void)loadView
-{
-    [super loadView];
- 
-    self.wantsFullScreenLayout = YES;
-    [self.navigationController setNavigationBarHidden:YES];
-    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
-}
+//-(void)loadView
+//{
+//    [super loadView];
+//
+//    self.wantsFullScreenLayout = YES;
+//    [self.navigationController setNavigationBarHidden:YES];
+//    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
+//}
 
 
 -(void)viewWillAppear:(BOOL)animated;
@@ -130,8 +131,8 @@
     [super viewWillAppear:animated];
     
 //    // 如果从编辑图片回来，需要隐藏状态栏和导航栏  隐藏状态栏 for IOS6
-//    [self.navigationController setNavigationBarHidden:YES];
-//    [[UIApplication sharedApplication] setStatusBarHidden:YES];
+    [self.navigationController setNavigationBarHidden:YES];
+    [[UIApplication sharedApplication] setStatusBarHidden:YES];
     // Camera open access
     [TuSDKTSDeviceSettings checkAllowWithController:self
                                                type:lsqDeviceSettingsCamera
